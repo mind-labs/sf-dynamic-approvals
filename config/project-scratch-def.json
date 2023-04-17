@@ -1,6 +1,7 @@
 {
-  "orgName": "dennisgrzyb company",
+  "orgName": "mindLab",
   "edition": "Developer",
+  "language": "en_US",
   "features": ["EnableSetPasswordInApi"],
   "settings": {
     "lightningExperienceSettings": {
