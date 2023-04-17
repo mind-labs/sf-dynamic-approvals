@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>SFDARecordLocked</fullName>
+        <categories>Dynamic Approvals</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SFDARecordLocked</shortDescription>
+        <value>This record is locked either due to a running approval process or due to being locked after approval.</value>
+    </labels>
+</CustomLabels>
