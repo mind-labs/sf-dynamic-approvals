@@ -1,12 +1,19 @@
 {
   "packageDirectories": [
     {
-      "path": "force-app",
-      "default": true
+      "path": "sf-dynamic-approvals",
+      "default": true,
+      "package": "Salesforce Dynamic Approvals",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "versionDescription": "Super-Charge your Approval Processes"
     }
   ],
   "name": "sf-dynamic-approvals",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "56.0"
+  "sourceApiVersion": "57.0",
+  "packageAliases": {
+    "Salesforce Dynamic Approvals": "0Ho2p0000008OO8CAM"
+  }
 }
