@@ -35,9 +35,9 @@ jobs:
             - name: Deploy source
               run: sfdx project deploy start
             - name: Run Apex tests
-              run: sfdx force:apex:test:run --codecoverage --resultformat human -d ./
+              run: sfdx apex test run -w 40 --code-coverage --result-format human -d ./
             - name: Delete Scratch Org
-              run: sfdx force:org:delete --noprompt
+              run: sfdx org:delete:scratch --no-prompt
             - name: Upload code coverage for Apex to Codecov.io
               uses: codecov/codecov-action@v2
               with:
