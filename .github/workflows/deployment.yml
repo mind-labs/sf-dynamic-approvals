@@ -5,12 +5,12 @@ on:
         branches:
             - master
         paths:
-            - "source/**"
+            - "sf-dynamic-approvals/**"
     pull_request:
         branches:
             - master
         paths:
-            - "source/**"
+            - "sf-dynamic-approvals/**"
 
 jobs:
     build:
