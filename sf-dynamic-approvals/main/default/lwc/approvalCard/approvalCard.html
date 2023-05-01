@@ -1,0 +1,46 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-5">
+                <template lwc:if={locked}>
+                    <div class="slds-align_absolute-center">
+                        <lightning-icon icon-name="utility:lock" title="Locked"></lightning-icon>
+                    </div>
+                </template>
+                <template lwc:else>
+                    <div class="slds-align_absolute-center">
+                        <lightning-icon icon-name="utility:unlock" title="Unlocked"></lightning-icon>
+                    </div>
+                </template>
+            </div>
+            <div class="slds-col slds-size_3-of-5">
+                <div class="slds-m-vertical_medium slds-text-heading_medium slds-align_absolute-center">
+                    {approvalProcessName}
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        Start Date {startDate}
+                    </div>
+                    <div class="slds-col">
+                        *
+                    </div>
+                    <div class="slds-col">
+                        Status {status}
+                    </div>
+                    <div class="slds-col">
+                        *
+                    </div>
+                    <div class="slds-col">
+                        Mode {mode}
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-5">
+                <c-submitter></c-submitter>
+            </div>
+        </div>
+        <div class="slds-align_absolute-center">
+            PROGRESS BAR
+        </div>
+    </lightning-card>
+</template>
