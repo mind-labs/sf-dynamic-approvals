@@ -40,8 +40,14 @@
             </div>
         </div>
         <hr>
-        <div class="slds-align_absolute-center">
-            PROGRESS BAR
+        <div>
+            <c-progress-indicator></c-progress-indicator>
         </div>
+        <hr>
+        <template lwc:if={showApprovalActions}>
+            <div class="slds-align_absolute-center">
+                APPROVAL ACTIONS
+            </div>
+        </template>     
     </lightning-card>
 </template>
