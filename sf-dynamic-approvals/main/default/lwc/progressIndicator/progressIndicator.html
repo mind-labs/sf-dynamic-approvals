@@ -7,9 +7,7 @@
                         <span
                             class="slds-icon_container slds-icon-utility-success slds-progress__marker slds-progress__marker_icon slds-progress__marker_icon-success"
                             title="Complete">
-                            <svg class="slds-icon" aria-hidden="true">
-                                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#success"></use>
-                            </svg>
+                            <lightning-icon icon-name="utility:success" size="x-small" variant="success" alternative-text="Success" title="Success"></lightning-icon>
                             <span class="slds-assistive-text">Approved</span>
                         </span>
                     </li>
@@ -18,9 +16,7 @@
                     <li key={step.approver} class="slds-progress__item slds-has-error">
                         <button class="slds-button slds-button_icon slds-progress__marker slds-progress__marker_icon"
                             title="Declined">
-                            <svg class="slds-button__icon" aria-hidden="true">
-                                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error"></use>
-                            </svg>
+                            <lightning-icon icon-name="utility:error" size="x-small" variant="error" alternative-text="Error" title="Error"></lightning-icon>
                             <span class="slds-assistive-text">Declined</span>
                         </button>
                     </li>
