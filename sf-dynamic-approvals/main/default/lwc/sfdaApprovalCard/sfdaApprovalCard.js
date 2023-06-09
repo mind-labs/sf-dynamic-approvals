@@ -1,5 +1,5 @@
 import { LightningElement, api, wire } from 'lwc';
-import CURRENT_USER_ID from '@salesforce/user/Id';
+// import CURRENT_USER_ID from '@salesforce/user/Id';
 
 export default class ApprovalCard extends LightningElement {
     // this is the outer component containing ApprovalProcessReader, Submitter and ProgressBar
@@ -7,7 +7,7 @@ export default class ApprovalCard extends LightningElement {
     @api recordId;
 
     // for testing, re-reference once approval record structure is clear
-    submitterId = CURRENT_USER_ID;
+    // submitterId = CURRENT_USER_ID;
     approvalProcessName = 'Approval Process Name';
     startDate = new Date().toISOString().substring(0, 10);
     status = 'Open';
@@ -18,9 +18,9 @@ export default class ApprovalCard extends LightningElement {
     }
 
     // temporary solution, discuss if actions should be shown for other people as well
-    get showApprovalActions() {
-        return (this.submitterId == CURRENT_USER_ID);
-    }
+    // get showApprovalActions() {
+    //     return (this.submitterId == CURRENT_USER_ID);
+    // }
 
     // get approval record
     /*@wire(getRecord, { recordId: recordId, fields: [NameField, ModeField, StatusField, StartDateField, SubmitterField]}) 
