@@ -5,7 +5,7 @@ PACKAGEVERSIONID=$( jq -r 'last(.packageAliases[])' sfdx-project.json )
 
 echo "Promoting latest package version"
 
-echo "sfdx force:package:version:promote -p PACKAGE_VERSION_ID --noprompt -v devhub"
-sfdx force:package:version:promote -p $PACKAGEVERSIONID --noprompt -v devhub
+echo "sfdx package version promote -p PACKAGE_VERSION_ID --noprompt -v devhub"
+sfdx force: package version promote -p $PACKAGEVERSIONID --noprompt -v devhub
 
 

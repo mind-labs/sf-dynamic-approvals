@@ -5,12 +5,12 @@ on:
         branches:
             - master
         paths:
-            - "source/**"
+            - "sf-dynamic-approvals/**"
     pull_request:
         branches:
             - master
         paths:
-            - "source/**"
+            - "sf-dynamic-approvals/**"
 
 jobs:
     build:
@@ -30,18 +30,14 @@ jobs:
               run: 'echo "${{ secrets.SFDX_AUTH_URL }}" > ./SALESFORCE_AUTH_URL.txt'
             - name: Authenticate Dev Hub
               run: "sfdx force:auth:sfdxurl:store -f ./SALESFORCE_AUTH_URL.txt -a devhub -d"
-            - name: Populate auth file for test hub
-              run: 'echo "${{ secrets.TESTHUB_AUTH_URL }}" > ./SALESFORCE_AUTH_URL.txt'
-            - name: Authenticate Test Hub
-              run: "sfdx force:auth:sfdxurl:store -f ./SALESFORCE_AUTH_URL.txt -a testhub -d"
             - name: Create Scratch Org
-              run: sfdx force:org:create --targetdevhubusername testhub --setdefaultusername --definitionfile config/project-scratch-def.json --setalias ciorg --durationdays 1
+              run: sfdx force:org:create --target-dev-hub devhub --setdefaultusername --definitionfile config/project-scratch-def.json --setalias ciorg --durationdays 1
             - name: Deploy source
-              run: sfdx force:source:push
+              run: sfdx project deploy start
             - name: Run Apex tests
-              run: sfdx force:apex:test:run --codecoverage --resultformat human -d ./
+              run: sfdx apex test run -w 40 --code-coverage --result-format human -d ./
             - name: Delete Scratch Org
-              run: sfdx force:org:delete --noprompt
+              run: sfdx org:delete:scratch --no-prompt
             - name: Upload code coverage for Apex to Codecov.io
               uses: codecov/codecov-action@v2
               with:
