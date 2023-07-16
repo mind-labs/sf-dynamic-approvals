@@ -13,14 +13,28 @@ export default class ApprovalCard extends LightningElement {
     startDate = new Date().toISOString().substring(0, 10);
     status = 'Open';
     mode = 'Locked';
+    
+    // stub for testing
+    listOfApprovers = [
+        {approver:'Ben Dover', approverId:'0053O000008ZcaD', status:'Approved', approved:true, declined:false},
+        {approver:'Anita Dick', approverId:'0053O000008ZcaE', status:'Pending', approved:false, declined:false},
+        {approver:'Herr Reinsch', approverId: '0053O000008ZcaF', status:'Declined', approved:false, declined:true},
+        {approver:'You', approverId: CURRENT_USER_ID, status:'Pending', approved:false, declined:false}
+    ];
 
     get locked() {
         return (this.mode == 'Locked');
     }
 
-    //temporary solution, discuss if actions should be shown for other people as well
+    //ToDo, discuss if actions should be shown for other people as well
     get showApprovalActions() {
-        return (this.submitterId == CURRENT_USER_ID);
+        let approvers = this.listOfApprovers;
+        for(let i = 0; i < approvers.length; i++){
+            if(approvers[i].approverId == CURRENT_USER_ID){
+                return true;
+            }
+        }
+        return false;
     }
 
     // get approval record
