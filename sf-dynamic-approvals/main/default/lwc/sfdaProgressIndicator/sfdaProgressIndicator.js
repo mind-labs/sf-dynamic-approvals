@@ -15,7 +15,6 @@ export default class ProgressIndicator extends LightningElement {
         return this.renderSize;
     }
     set currentSize(value){
-        console.log(value);
         this.renderSize = value;
         switch(value) {
             case 'SMALL':
