@@ -20,7 +20,14 @@ export default class ProgressIndicator extends LightningElement {
                 approvalStep.approved = approver.approved;
                 approvalStep.rejected = approver.rejected;
                 approvalStep.approverId = approver.approverId;
-                approvalStep.isCurrentApprover = (approver.approverId == CURRENT_USER_ID ? true : false)
+                if(approver.approverId == CURRENT_USER_ID){
+                    approvalStep.isCurrentApprover = true;
+                    approvalStep.approver = 'You';
+                } else {
+                    approvalStep.isCurrentApprover = false;
+                    approvalStep.approver = approver.approver;
+                }
+                
             }
             _approvalSteps.push(approvalStep);
         }

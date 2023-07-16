@@ -19,7 +19,8 @@ export default class ApprovalCard extends LightningElement {
         {approver:'Ben Dover', approverId:'0053O000008ZcaD', status:'Approved', approved:true, rejected:false},
         {approver:'Anita Dick', approverId:'0053O000008ZcaE', status:'Pending', approved:false, rejected:false},
         {approver:'Herr Reinsch', approverId: '0053O000008ZcaF', status:'Rejected', approved:false, rejected:true},
-        {approver:'Current User', approverId: CURRENT_USER_ID, status:'Pending', approved:false, rejected:false}
+        {approver:'Current User', approverId: CURRENT_USER_ID, status:'Pending', approved:false, rejected:false},
+        {approver:'Mike Oxlong', approverId: '0053O000008ZcaG', status:'Approved', approved:true, rejected:false}
     ];
 
     get locked() {
