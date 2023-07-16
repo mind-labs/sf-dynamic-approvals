@@ -16,10 +16,10 @@ export default class ApprovalCard extends LightningElement {
     
     // stub for testing
     listOfApprovers = [
-        {approver:'Ben Dover', approverId:'0053O000008ZcaD', status:'Approved', approved:true, declined:false},
-        {approver:'Anita Dick', approverId:'0053O000008ZcaE', status:'Pending', approved:false, declined:false},
-        {approver:'Herr Reinsch', approverId: '0053O000008ZcaF', status:'Declined', approved:false, declined:true},
-        {approver:'You', approverId: CURRENT_USER_ID, status:'Pending', approved:false, declined:false}
+        {approver:'Ben Dover', approverId:'0053O000008ZcaD', status:'Approved', approved:true, rejected:false},
+        {approver:'Anita Dick', approverId:'0053O000008ZcaE', status:'Pending', approved:false, rejected:false},
+        {approver:'Herr Reinsch', approverId: '0053O000008ZcaF', status:'Rejected', approved:false, rejected:true},
+        {approver:'Current User', approverId: CURRENT_USER_ID, status:'Pending', approved:false, rejected:false}
     ];
 
     get locked() {
@@ -37,7 +37,7 @@ export default class ApprovalCard extends LightningElement {
         return false;
     }
 
-    // get approval record
+    // get approval record -> presumably get record to approve first and then the related approval record
     /*@wire(getRecord, { recordId: recordId, fields: [NameField, ModeField, StatusField, StartDateField, SubmitterField]}) 
     approvalRecordData({error, data}) {
         if (data) {
