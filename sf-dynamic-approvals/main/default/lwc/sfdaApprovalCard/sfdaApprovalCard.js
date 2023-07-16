@@ -5,6 +5,7 @@ export default class ApprovalCard extends LightningElement {
     // this is the outer component containing ApprovalProcessReader, Submitter and ProgressBar
     // ...
     @api recordId;
+    @api flexipageRegionWidth;
 
     // for testing, re-reference once approval record structure is clear
     submitterId = CURRENT_USER_ID;
@@ -31,5 +32,4 @@ export default class ApprovalCard extends LightningElement {
             console.log(error);
         }
     }*/
-
 }
