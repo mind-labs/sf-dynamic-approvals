@@ -35,29 +35,23 @@ export default class ProgressIndicator extends LightningElement {
     }
 
 
-    renderSize;
-    renderSmallSize = false;
-    renderMediumSize = false;
-    renderLargeSize = false;
+    _renderSize;
 
     @api approvalRecordId;
     @api 
     get currentSize(){
-        return this.renderSize;
+        return this._renderSize;
     }
     set currentSize(value){
         switch(value) {
             case 'SMALL':
-                this.renderSmallSize = true;
-                this.renderSize = 'x-small';
+                this._renderSize = 'x-small';
                 break;
             case 'MEDIUM':
-                this.renderMediumSize = true;
-                this.renderSize = 'small';
+                this._renderSize = 'small';
                 break;
             default:
-                this.renderLargeSize = true;
-                this.renderSize = 'medium';
+                this._renderSize = 'medium';
         }
     }
 }
