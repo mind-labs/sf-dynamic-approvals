@@ -36,9 +36,10 @@ export default class ProgressIndicator extends LightningElement {
 
 
     _renderSize;
+    isRenderSizeSet = false;
 
     @api approvalRecordId;
-    @api 
+    @api
     get currentSize(){
         return this._renderSize;
     }
@@ -53,5 +54,6 @@ export default class ProgressIndicator extends LightningElement {
             default:
                 this._renderSize = 'medium';
         }
+        this.isRenderSizeSet = true;
     }
 }

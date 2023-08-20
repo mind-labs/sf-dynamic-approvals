@@ -37,14 +37,4 @@ export default class ApprovalCard extends LightningElement {
         }
         return false;
     }
-
-    // get approval record -> presumably get record to approve first and then the related approval record
-    /*@wire(getRecord, { recordId: recordId, fields: [NameField, ModeField, StatusField, StartDateField, SubmitterField]}) 
-    approvalRecordData({error, data}) {
-        if (data) {
-            this.approvalRecord = data;
-        } else if(error) {
-            console.log(error);
-        }
-    }*/
 }
