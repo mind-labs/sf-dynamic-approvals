@@ -43,6 +43,78 @@
                                 <span class="slds-assistive-text">Step 4 </span>
                             </button>
                         </li>
+                        
+                        <template for:each={approvalSteps} for:item="approvalStep">
+                            <template lwc:if={approvalStep.approved}>
+                                <li key={approvalStep.approverId} class="slds-progress__item slds-is-completed">
+                                    <c-popovers variant="brand">
+                                        <div slot="value">
+                                            <button class="slds-button slds-progress__marker slds-progress__marker_icon">
+                                                <lightning-icon icon-name="utility:success" variant="success" size={currentSize}></lightning-icon>
+                                            </button>
+                                        </div>
+                                        <div slot="header">
+                                            <h1>{approvalStep.approver}</h1>
+                                        </div>
+                                        <div slot="body">
+                                            {approvalStep.approver} has approved the request.
+                                        </div>
+                                    </c-popovers>
+                                </li>
+                            </template>
+                            <template lwc:elseif={approvalStep.rejected}>
+                                <li key={approvalStep.approverId} class="slds-progress__item slds-has-error">
+                                    <c-popovers variant="brand">
+                                        <div slot="value">
+                                            <button class="slds-button slds-progress__marker slds-progress__marker_icon">
+                                                <lightning-icon icon-name="utility:error" variant="error" size={currentSize}></lightning-icon>
+                                            </button>
+                                        </div>
+                                        <div slot="header">
+                                            <h1>{approvalStep.approver}</h1>
+                                        </div>
+                                        <div slot="body">
+                                            {approvalStep.approver} has rejected the request.
+                                        </div>
+                                    </c-popovers>
+                                </li>
+                            </template>
+                            <template lwc:elseif={approvalStep.isCurrentApprover}>
+                                <li key={approvalStep.approverId} class="slds-progress__item slds-is-active">
+                                    <c-popovers variant="brand">
+                                        <div slot="value">
+                                            <button class="slds-button slds-progress__marker slds-progress__marker_icon">
+                                                <lightning-icon icon-name="utility:record" size={currentSize}></lightning-icon>
+                                            </button>
+                                        </div>
+                                        <div slot="header">
+                                            <h1>{approvalStep.approver}</h1>
+                                        </div>
+                                        <div slot="body">
+                                            Waiting on your decision
+                                        </div>
+                                    </c-popovers>
+                                    
+                                </li>
+                            </template>
+                            <template lwc:else>
+                                <li key={approvalStep.approverId} class="slds-progress__item">
+                                    <c-popovers variant="brand">
+                                        <div slot="value">
+                                            <button class="slds-button slds-progress__marker slds-progress__marker_icon">
+                                                <lightning-icon icon-name="utility:record" size={currentSize}></lightning-icon>
+                                            </button>
+                                        </div>
+                                        <div slot="header">
+                                            <h1>{approvalStep.approver}</h1>
+                                        </div>
+                                        <div slot="body">
+                                            Waiting on {approvalStep.approver}s decision
+                                        </div>
+                                    </c-popovers>
+                                </li>
+                            </template>
+                        </template> 
                     </ol>
                     <div class="slds-progress-bar slds-progress-bar_x-small">
                     </div>
