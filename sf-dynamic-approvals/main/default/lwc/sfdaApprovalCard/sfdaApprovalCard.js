@@ -8,7 +8,7 @@ export default class ApprovalCard extends LightningElement {
     @api flexipageRegionWidth;
 
     // for testing, re-reference once approval record structure is clear
-    submitterId = CURRENT_USER_ID;
+    submitterId = '0053O000008ZcoF';
     approvalProcessName = 'Approval Process Name';
     startDate = new Date().toISOString().substring(0, 10);
     status = 'Open';
@@ -42,22 +42,24 @@ export default class ApprovalCard extends LightningElement {
     }
 
     // these funtions are for interface testing until backaend exists
-    _temp_imInApprovers = false;
-    
+
     temp_makeMeApprover() {
-        if(!this._temp_imInApprovers){
-            this._temp_imInApprovers = true;
-            this.listOfApprovers.push(
-                {approver:'Current User', approverId: CURRENT_USER_ID, status:'Pending', approved:false, rejected:false}
-            );
-        }
+        this.listOfApprovers = [
+            {approver:'Ben Dover', approverId:'0053O000008ZcaD', status:'Approved', approved:true, rejected:false},
+            {approver:'Anita Dick', approverId:'0053O000008ZcaE', status:'Pending', approved:false, rejected:false},
+            {approver:'Current User', approverId: CURRENT_USER_ID, status:'Pending', approved:false, rejected:false},
+            {approver:'Herr Reinsch', approverId: '0053O000008ZcaF', status:'Rejected', approved:false, rejected:true},
+            {approver:'Mike Oxlong', approverId: '0053O000008ZcaG', status:'Approved', approved:true, rejected:false}
+        ];
     }
 
     temp_removeMeFromApprovers() {
-        if(this._temp_imInApprovers){
-            this.listOfApprovers.pop();
-        }
-        this._temp_imInApprovers = false;
+        this.listOfApprovers = [
+            {approver:'Ben Dover', approverId:'0053O000008ZcaD', status:'Approved', approved:true, rejected:false},
+            {approver:'Anita Dick', approverId:'0053O000008ZcaE', status:'Pending', approved:false, rejected:false},
+            {approver:'Herr Reinsch', approverId: '0053O000008ZcaF', status:'Rejected', approved:false, rejected:true},
+            {approver:'Mike Oxlong', approverId: '0053O000008ZcaG', status:'Approved', approved:true, rejected:false}
+        ];
     }
 
     temp_makeMeSubmitter() {
