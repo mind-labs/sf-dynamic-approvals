@@ -34,7 +34,7 @@ export default class ProgressIndicator extends LightningElement {
         this.approvalSteps = _approvalSteps;
     }
 
-    // width awareness
+
     renderSize;
     renderSmallSize = false;
     renderMediumSize = false;
