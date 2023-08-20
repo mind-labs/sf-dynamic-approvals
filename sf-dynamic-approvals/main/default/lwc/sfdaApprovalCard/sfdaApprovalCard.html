@@ -44,16 +44,24 @@
             <c-sfda-progress-indicator class="slds-var-p-horizontal_small" current-size={flexipageRegionWidth} list-of-approvers={listOfApprovers}></c-sfda-progress-indicator>
         </div>
         <div slot="footer" class="slds-align_absolute-center"></div>
-        <template lwc:if={showSubmitterActions}>
-                <lightning-button variant="destructive" label="Reject" title="Reject" onclick={handleRejectClick}></lightning-button>
-                <lightning-button variant="brand" label="Approve" title="Approve" onclick={handleApproveClick} class="slds-m-left_small"></lightning-button>
-        </template>
-        <template lwc:elseif={showApproverActions}>
-                <lightning-button variant="neutral" label="Resend Reminder" title="Resend Reminder to Approvers" onclick={handleReminderClick}></lightning-button>
-        </template>
-        <template lwc:else>
-                <h2>You are a viewer of this request and cannot perform any actions.</h2>
-        </template>
-    </div>
+            <template lwc:if={showSubmitterActions}>
+                    <lightning-button variant="destructive" label="Reject" title="Reject" onclick={handleRejectClick}></lightning-button>
+                    <lightning-button variant="brand" label="Approve" title="Approve" onclick={handleApproveClick} class="slds-m-left_small"></lightning-button>
+            </template>
+            <template lwc:elseif={showApproverActions}>
+                    <lightning-button variant="neutral" label="Resend Reminder" title="Resend Reminder to Approvers" onclick={handleReminderClick}></lightning-button>
+            </template>
+            <template lwc:else>
+                    <h2>You are a viewer of this request and cannot perform any actions.</h2>
+            </template>
+        </div>
+        <div>
+            <lightning-button-group>
+                <lightning-button variant="neutral" label="Make me approver" title="Make me approver" onclick={temp_makeMeApprover}></lightning-button>
+                <lightning-button variant="neutral" label="Remove me from approvers" title="Remove me from approvers" onclick={temp_removeMeFromApprovers}></lightning-button>
+                <lightning-button variant="neutral" label="Make me submitter" title="Make me submitter" onclick={temp_makeMeSubmitter}></lightning-button>
+                <lightning-button variant="neutral" label="Make someone submitter" title="Make someone else submitter" onclick={temp_makeSomeoneElseSubmitter}></lightning-button>
+            </lightning-button-group>
+        </div>
     </lightning-card>
 </template>

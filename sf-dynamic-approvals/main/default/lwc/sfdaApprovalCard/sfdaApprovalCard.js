@@ -41,9 +41,30 @@ export default class ApprovalCard extends LightningElement {
         return false;
     }
 
+    // these funtions are for interface testing until backaend exists
+    _temp_imInApprovers = false;
+    
     temp_makeMeApprover() {
-        this.listOfApprovers.push(
-            {approver:'Current User', approverId: CURRENT_USER_ID, status:'Pending', approved:false, rejected:false}
-        );
+        if(!this._temp_imInApprovers){
+            this._temp_imInApprovers = true;
+            this.listOfApprovers.push(
+                {approver:'Current User', approverId: CURRENT_USER_ID, status:'Pending', approved:false, rejected:false}
+            );
+        }
+    }
+
+    temp_removeMeFromApprovers() {
+        if(this._temp_imInApprovers){
+            this.listOfApprovers.pop();
+        }
+        this._temp_imInApprovers = false;
+    }
+
+    temp_makeMeSubmitter() {
+        this.submitterId = CURRENT_USER_ID;
+    }
+
+    temp_makeSomeoneElseSubmitter() {
+        this.submitterId = '0053O000008ZcoF';
     }
 }
