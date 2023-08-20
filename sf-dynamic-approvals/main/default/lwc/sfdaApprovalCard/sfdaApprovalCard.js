@@ -32,8 +32,4 @@ export default class ApprovalCard extends LightningElement {
             console.log(error);
         }
     }*/
-
-    checkWidth(){
-        console.log(this.flexipageRegionWidth);
-    }
 }
