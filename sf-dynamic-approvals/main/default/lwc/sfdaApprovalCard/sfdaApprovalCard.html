@@ -1,6 +1,6 @@
 <template>
     <lightning-card>
-        <div slot="header" class="slds-grid slds-gutters">
+        <div class="slds-grid slds-gutters">
             <div class="slds-col slds-size_1-of-5">
                 <template lwc:if={locked}>
                     <div class="slds-align_absolute-center">
@@ -39,8 +39,8 @@
                 <c-sfda-submitter submitter-id={submitterId}></c-sfda-submitter>
             </div>
         </div>
-        <div>
-            <c-sfda-progress-indicator class="slds-var-p-horizontal_small"></c-sfda-progress-indicator>
+        <div lwc:if={flexipageRegionWidth}>
+            <c-sfda-progress-indicator class="slds-var-p-horizontal_small" current-size={flexipageRegionWidth} list-of-approvers={listOfApprovers}></c-sfda-progress-indicator>
         </div>
         <template lwc:if={showApprovalActions}>
             <div slot="footer" class="slds-align_absolute-center">
