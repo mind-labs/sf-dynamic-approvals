@@ -41,6 +41,10 @@ export default class ApprovalCard extends LightningElement {
         return false;
     }
 
+    get useFullColumnWidth() {
+        return (this.flexipageRegionWidth == 'SMALL');
+    }
+
     // these funtions are for interface testing until backaend exists
 
     temp_makeMeApprover() {
