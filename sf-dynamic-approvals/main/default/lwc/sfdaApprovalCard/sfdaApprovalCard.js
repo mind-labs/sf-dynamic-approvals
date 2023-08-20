@@ -19,7 +19,6 @@ export default class ApprovalCard extends LightningElement {
         {approver:'Ben Dover', approverId:'0053O000008ZcaD', status:'Approved', approved:true, rejected:false},
         {approver:'Anita Dick', approverId:'0053O000008ZcaE', status:'Pending', approved:false, rejected:false},
         {approver:'Herr Reinsch', approverId: '0053O000008ZcaF', status:'Rejected', approved:false, rejected:true},
-        {approver:'Current User', approverId: CURRENT_USER_ID, status:'Pending', approved:false, rejected:false},
         {approver:'Mike Oxlong', approverId: '0053O000008ZcaG', status:'Approved', approved:true, rejected:false}
     ];
 
@@ -27,8 +26,12 @@ export default class ApprovalCard extends LightningElement {
         return (this.mode == 'Locked');
     }
 
+    get showSubmitterActions() {
+        return (CURRENT_USER_ID == this.submitterId);
+    }
+
     //ToDo, discuss if actions should be shown for other people as well
-    get showApprovalActions() {
+    get showApproverActions() {
         let approvers = this.listOfApprovers;
         for(let i = 0; i < approvers.length; i++){
             if(approvers[i].approverId == CURRENT_USER_ID){
@@ -36,5 +39,11 @@ export default class ApprovalCard extends LightningElement {
             }
         }
         return false;
+    }
+
+    temp_makeMeApprover() {
+        this.listOfApprovers.push(
+            {approver:'Current User', approverId: CURRENT_USER_ID, status:'Pending', approved:false, rejected:false}
+        );
     }
 }
