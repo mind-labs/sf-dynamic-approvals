@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>IsKeepLockedAfterProcess__c</fullName>
+    <fullName>LockRecord__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>Keep Locked after Process?</label>
-    <trackTrending>false</trackTrending>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Lock Record?</label>
     <type>Checkbox</type>
 </CustomField>

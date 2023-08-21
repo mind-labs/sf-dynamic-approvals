@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ApprovedBy__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Used to populate the latest approver - or the only approver in a FCFS step.</description>
+    <externalId>false</externalId>
+    <label>Approved By</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>DynamicApprovalSteps</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
