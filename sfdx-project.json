@@ -14,6 +14,7 @@
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "57.0",
   "packageAliases": {
-    "Salesforce Dynamic Approvals": "0Ho2p0000008OO8CAM"
+    "Salesforce Dynamic Approvals": "0Ho2p0000008OO8CAM",
+    "Salesforce Dynamic Approvals@0.1.1-2": "04t2p000001G2HPAA0"
   }
 }
