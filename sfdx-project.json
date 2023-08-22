@@ -4,8 +4,8 @@
       "path": "sf-dynamic-approvals",
       "default": true,
       "package": "Salesforce Dynamic Approvals",
-      "versionName": "ver 0.1",
-      "versionNumber": "0.1.0.NEXT",
+      "versionName": "ver. 0.1.1",
+      "versionNumber": "0.1.1.NEXT",
       "versionDescription": "Super-Charge your Approval Processes"
     }
   ],
