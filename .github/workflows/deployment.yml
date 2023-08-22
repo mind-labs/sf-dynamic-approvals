@@ -15,6 +15,7 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        permissions: write-all
         steps:
             - uses: actions/checkout@v2
               with:
@@ -45,7 +46,7 @@ jobs:
                   flags: Apex
                   files: ./test-result-codecoverage.json
             - name: Increment Package Version in sfdx-project.json
-              if: github.actor == github.event.repository.owner.login && github.event_name == 'pull_request' && github.event.action == 'opened'
+              if: github.event_name == 'pull_request' && github.event.action == 'opened'
               run: |
                   chmod +x scripts/increment-package-version.sh
                   ./scripts/increment-package-version.sh
