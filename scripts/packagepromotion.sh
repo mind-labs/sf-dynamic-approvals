@@ -59,7 +59,7 @@ sfdx force:package:version:promote -p $PACKAGEVERSIONID --noprompt -v devhub
 
 echo "Updating docs"
 #updates docs with new installation id
-sed -i "s/04t.\{15\}/$PACKAGEVERSIONID/g" docs/installation.md
+#sed -i "s/04t.\{15\}/$PACKAGEVERSIONID/g" docs/installation.md
 
 #updates README with new installation id
 sed -i "s/04t.\{15\}/$PACKAGEVERSIONID/g" README.md
