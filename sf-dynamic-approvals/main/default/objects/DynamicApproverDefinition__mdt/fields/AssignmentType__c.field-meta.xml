@@ -25,6 +25,11 @@
                 <default>false</default>
                 <label>User Id</label>
             </value>
+            <value>
+                <fullName>Related User Lookup</fullName>
+                <default>false</default>
+                <label>Related User Lookup</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

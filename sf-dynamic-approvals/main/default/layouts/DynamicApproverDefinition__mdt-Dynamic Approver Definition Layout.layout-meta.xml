@@ -34,6 +34,10 @@
                 <behavior>Edit</behavior>
                 <field>DynamicApprovalStepDefinition__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>RelatedUserLookupFieldName__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
