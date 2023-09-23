@@ -1,3 +1,14 @@
 <template>
-    
+    <lightning-card title="Items to Approve">
+        <!-- add table for items -->
+        <template for:each={piwiItems} for:item="piwiItem">
+            <c-sfda-process-instance-work-item 
+                key={piwiItem.approvalRecord}
+                approval-record={piwiItem.approvalRecord}
+                start-date={piwiItem.startDate}
+                item-status={piwiItem.itemStatus}
+                approval-mode={piwiItem.approvalMode}>
+            </c-sfda-process-instance-work-item>
+        </template>
+    </lightning-card>
 </template>
